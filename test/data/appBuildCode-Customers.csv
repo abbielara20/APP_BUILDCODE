@@ -1,0 +1,6 @@
+ID;customerId;firstName;lastName;email;phone;createdAt;createdBy;modifiedAt;modifiedBy
+8abe47b2-8035-4fa3-8d79-fda66dbf8c8c;1001;Alice;Johnson;alice.johnson@example.com;123-456-7890;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+813e5770-04ff-4ea3-89ea-6963ef2c374f;1002;Bob;Smith;bob.smith@example.com;123-456-7891;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+0e869dd5-96e5-4554-acd8-0bc31d494e8a;1003;Charlie;Brown;charlie.brown@example.com;123-456-7892;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+f0c4cd13-9ad9-43d0-96d3-0a7ffa4f58ed;1004;David;Wilson;david.wilson@example.com;123-456-7893;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+b2bce519-d3ae-45e9-b0dc-cb46f15b56fc;1005;Eva;Davis;eva.davis@example.com;123-456-7894;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin

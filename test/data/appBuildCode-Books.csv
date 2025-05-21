@@ -1,0 +1,6 @@
+ID;isbn;title;author;publishedDate;price;categories1_ID;orders_ID;createdAt;createdBy;modifiedAt;modifiedBy
+8abe47b2-8035-4fa3-8d79-fda66dbf8c8c;978-3-16-148410-0;Learning SQL;John Doe;2021-06-01;29.99;8abe47b2-8035-4fa3-8d79-fda66dbf8c8c;8abe47b2-8035-4fa3-8d79-fda66dbf8c8c;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+813e5770-04ff-4ea3-89ea-6963ef2c374f;978-1-4028-9462-6;Mastering Python;Jane Smith;2021-07-15;39.99;813e5770-04ff-4ea3-89ea-6963ef2c374f;813e5770-04ff-4ea3-89ea-6963ef2c374f;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+0e869dd5-96e5-4554-acd8-0bc31d494e8a;978-0-321-56384-2;JavaScript: The Good Parts;Douglas Crockford;2021-05-20;24.99;0e869dd5-96e5-4554-acd8-0bc31d494e8a;0e869dd5-96e5-4554-acd8-0bc31d494e8a;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+f0c4cd13-9ad9-43d0-96d3-0a7ffa4f58ed;978-0-201-63361-0;Clean Code;Robert C. Martin;2021-08-10;34.99;8abe47b2-8035-4fa3-8d79-fda66dbf8c8c;f0c4cd13-9ad9-43d0-96d3-0a7ffa4f58ed;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+b2bce519-d3ae-45e9-b0dc-cb46f15b56fc;978-1-4919-1881-0;The Pragmatic Programmer;Andrew Hunt;2021-06-15;44.99;813e5770-04ff-4ea3-89ea-6963ef2c374f;b2bce519-d3ae-45e9-b0dc-cb46f15b56fc;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin

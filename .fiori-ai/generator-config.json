@@ -1,0 +1,32 @@
+{
+    "version": "0.2",
+    "floorplan": "FE_FEOP",
+    "project": {
+        "name": "orders-management",
+        "targetFolder": "/home/user/projects/appBuildCode",
+        "title": "Orders Management",
+        "description": "Manage orders with draft, create, delete, and insert features",
+        "ui5Version": "1.132.1",
+        "localUI5Version": "1.82.2",
+        "sapux": true
+    },
+    "service": {
+        "servicePath": "/service/appBuildCode/",
+        "capService": {
+            "projectPath": "/home/user/projects/appBuildCode",
+            "serviceName": "appBuildCodeSrv",
+            "serviceCdsPath": "srv/service.cds"
+        }
+    },
+    "entityConfig": {
+        "mainEntity": {
+            "entityName": "Orders"
+        },
+        "generateFormAnnotations": true
+    },
+    "projectType": "FORM_ENTRY_OBJECT_PAGE",
+    "telemetryData": {
+        "generationSourceName": "AI Headless",
+        "generationSourceVersion": "1.17.5"
+    }
+}

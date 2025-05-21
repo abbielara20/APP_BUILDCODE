@@ -1,0 +1,6 @@
+ID;categoriesID;name;description;books1_ID;createdAt;createdBy;modifiedAt;modifiedBy
+8abe47b2-8035-4fa3-8d79-fda66dbf8c8c;1;Programming;Books related to programming languages and techniques;8abe47b2-8035-4fa3-8d79-fda66dbf8c8c;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+813e5770-04ff-4ea3-89ea-6963ef2c374f;2;Databases;Books about database management and design;813e5770-04ff-4ea3-89ea-6963ef2c374f;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+0e869dd5-96e5-4554-acd8-0bc31d494e8a;3;Web Development;Books focused on web technologies;0e869dd5-96e5-4554-acd8-0bc31d494e8a;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+f0c4cd13-9ad9-43d0-96d3-0a7ffa4f58ed;4;Software Engineering;Books discussing software development methodologies;f0c4cd13-9ad9-43d0-96d3-0a7ffa4f58ed;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
+b2bce519-d3ae-45e9-b0dc-cb46f15b56fc;5;Data Science;Books covering data analysis and machine learning;b2bce519-d3ae-45e9-b0dc-cb46f15b56fc;2021-06-27T14:52:23Z;admin;2021-06-27T14:52:23Z;admin
