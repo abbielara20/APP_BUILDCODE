@@ -19,6 +19,40 @@
       "env": {
         "run.config": "{\"handlerId\":\"lcap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/appBuildCode\\\",\\\"profileName\\\":\\\"\\\"}\"}"
       }
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "args": [
+        "-i"
+      ],
+      "skipFiles": [
+        "<node_internals>/**/*.js",
+        "node_modules"
+      ]
+    },
+    {
+      "name": "cds serve",
+      "request": "launch",
+      "type": "node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "cds",
+      "args": [
+        "serve",
+        "--with-mocks",
+        "--in-memory?",
+        "--port",
+        "4040"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "envFile": "${workspaceFolder}/env/.env1",
+      "env": {
+        "run.config": "{\"handlerId\":\"lcap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/appBuildCode\\\",\\\"profileName\\\":\\\"\\\"}\"}"
+      }
+    },
   ]
 }

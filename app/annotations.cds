@@ -1,11 +1,11 @@
-using { appBuildCodeSrv } from '../srv/service.cds';
+using { appBuildCodeService } from '../srv/service.cds';
 
-annotate appBuildCodeSrv.Books with @UI.HeaderInfo: { TypeName: 'Book', TypeNamePlural: 'Books', Title: { Value: isbn } };
-annotate appBuildCodeSrv.Books with {
+annotate appBuildCodeService.Books with @UI.HeaderInfo: { TypeName: 'Book', TypeNamePlural: 'Books', Title: { Value: isbn } };
+annotate appBuildCodeService.Books with {
   ID @UI.Hidden @Common.Text: { $value: isbn, ![@UI.TextArrangement]: #TextOnly }
 };
-annotate appBuildCodeSrv.Books with @UI.Identification: [{ Value: isbn }];
-annotate appBuildCodeSrv.Books with {
+annotate appBuildCodeService.Books with @UI.Identification: [{ Value: isbn }];
+annotate appBuildCodeService.Books with {
   categories1 @Common.ValueList: {
     CollectionPath: 'Categories',
     Parameters    : [
@@ -45,7 +45,7 @@ annotate appBuildCodeSrv.Books with {
     ],
   }
 };
-annotate appBuildCodeSrv.Books with {
+annotate appBuildCodeService.Books with {
   orders @Common.ValueList: {
     CollectionPath: 'Orders',
     Parameters    : [
@@ -85,15 +85,15 @@ annotate appBuildCodeSrv.Books with {
     ],
   }
 };
-annotate appBuildCodeSrv.Books with @UI.DataPoint #title: {
+annotate appBuildCodeService.Books with @UI.DataPoint #title: {
   Value: title,
   Title: 'Title',
 };
-annotate appBuildCodeSrv.Books with @UI.DataPoint #author: {
+annotate appBuildCodeService.Books with @UI.DataPoint #author: {
   Value: author,
   Title: 'Author',
 };
-annotate appBuildCodeSrv.Books with {
+annotate appBuildCodeService.Books with {
   isbn @title: 'ISBN';
   title @title: 'Title';
   author @title: 'Author';
@@ -105,11 +105,11 @@ annotate appBuildCodeSrv.Books with {
   modifiedBy @title: 'Modified By'
 };
 
-annotate appBuildCodeSrv.Books with {
+annotate appBuildCodeService.Books with {
   price @Measures.ISOCurrency: Currency_code
 };
 
-annotate appBuildCodeSrv.Books with @UI.LineItem: [
+annotate appBuildCodeService.Books with @UI.LineItem: [
  { $Type: 'UI.DataField', Value: isbn },
  { $Type: 'UI.DataField', Value: title },
  { $Type: 'UI.DataField', Value: author },
@@ -119,7 +119,7 @@ annotate appBuildCodeSrv.Books with @UI.LineItem: [
     { $Type: 'UI.DataField', Label: 'Order', Value: orders_ID }
 ];
 
-annotate appBuildCodeSrv.Books with @UI.FieldGroup #Main: {
+annotate appBuildCodeService.Books with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
  { $Type: 'UI.DataField', Value: isbn },
  { $Type: 'UI.DataField', Value: title },
@@ -135,37 +135,37 @@ annotate appBuildCodeSrv.Books with @UI.FieldGroup #Main: {
   ]
 };
 
-annotate appBuildCodeSrv.Books with {
+annotate appBuildCodeService.Books with {
   categories1 @Common.Text: { $value: categories1.categoriesID, ![@UI.TextArrangement]: #TextOnly };
   orders @Common.Text: { $value: orders.orderId, ![@UI.TextArrangement]: #TextOnly }
 };
 
-annotate appBuildCodeSrv.Books with {
+annotate appBuildCodeService.Books with {
   categories @Common.Label: 'Categories';
   categories1 @Common.Label: 'Category';
   orders @Common.Label: 'Order'
 };
 
-annotate appBuildCodeSrv.Books with @UI.HeaderFacets: [
+annotate appBuildCodeService.Books with @UI.HeaderFacets: [
  { $Type : 'UI.ReferenceFacet', Target : '@UI.DataPoint#title' },
  { $Type : 'UI.ReferenceFacet', Target : '@UI.DataPoint#author' }
 ];
 
-annotate appBuildCodeSrv.Books with @UI.Facets: [
+annotate appBuildCodeService.Books with @UI.Facets: [
   { $Type: 'UI.ReferenceFacet', ID: 'Main', Label: 'General Information', Target: '@UI.FieldGroup#Main' }
 ];
 
-annotate appBuildCodeSrv.Books with @UI.SelectionFields: [
+annotate appBuildCodeService.Books with @UI.SelectionFields: [
   categories1_ID,
   orders_ID
 ];
 
-annotate appBuildCodeSrv.Categories with @UI.HeaderInfo: { TypeName: 'Category', TypeNamePlural: 'Categories', Title: { Value: categoriesID } };
-annotate appBuildCodeSrv.Categories with {
+annotate appBuildCodeService.Categories with @UI.HeaderInfo: { TypeName: 'Category', TypeNamePlural: 'Categories', Title: { Value: categoriesID } };
+annotate appBuildCodeService.Categories with {
   ID @UI.Hidden @Common.Text: { $value: categoriesID, ![@UI.TextArrangement]: #TextOnly }
 };
-annotate appBuildCodeSrv.Categories with @UI.Identification: [{ Value: categoriesID }];
-annotate appBuildCodeSrv.Categories with {
+annotate appBuildCodeService.Categories with @UI.Identification: [{ Value: categoriesID }];
+annotate appBuildCodeService.Categories with {
   books1 @Common.ValueList: {
     CollectionPath: 'Books',
     Parameters    : [
@@ -213,11 +213,11 @@ annotate appBuildCodeSrv.Categories with {
     ],
   }
 };
-annotate appBuildCodeSrv.Categories with @UI.DataPoint #name: {
+annotate appBuildCodeService.Categories with @UI.DataPoint #name: {
   Value: name,
   Title: 'Name',
 };
-annotate appBuildCodeSrv.Categories with {
+annotate appBuildCodeService.Categories with {
   categoriesID @title: 'ID';
   name @title: 'Name';
   description @title: 'Description';
@@ -227,14 +227,14 @@ annotate appBuildCodeSrv.Categories with {
   modifiedBy @title: 'Modified By'
 };
 
-annotate appBuildCodeSrv.Categories with @UI.LineItem: [
+annotate appBuildCodeService.Categories with @UI.LineItem: [
  { $Type: 'UI.DataField', Value: categoriesID },
  { $Type: 'UI.DataField', Value: name },
  { $Type: 'UI.DataField', Value: description },
     { $Type: 'UI.DataField', Label: 'Book', Value: books1_ID }
 ];
 
-annotate appBuildCodeSrv.Categories with @UI.FieldGroup #Main: {
+annotate appBuildCodeService.Categories with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
  { $Type: 'UI.DataField', Value: categoriesID },
  { $Type: 'UI.DataField', Value: name },
@@ -247,41 +247,41 @@ annotate appBuildCodeSrv.Categories with @UI.FieldGroup #Main: {
   ]
 };
 
-annotate appBuildCodeSrv.Categories with {
+annotate appBuildCodeService.Categories with {
   books1 @Common.Text: { $value: books1.isbn, ![@UI.TextArrangement]: #TextOnly }
 };
 
-annotate appBuildCodeSrv.Categories with {
+annotate appBuildCodeService.Categories with {
   books @Common.Label: 'Books';
   books1 @Common.Label: 'Book'
 };
 
-annotate appBuildCodeSrv.Categories with @UI.HeaderFacets: [
+annotate appBuildCodeService.Categories with @UI.HeaderFacets: [
  { $Type : 'UI.ReferenceFacet', Target : '@UI.DataPoint#name' }
 ];
 
-annotate appBuildCodeSrv.Categories with @UI.Facets: [
+annotate appBuildCodeService.Categories with @UI.Facets: [
   { $Type: 'UI.ReferenceFacet', ID: 'Main', Label: 'General Information', Target: '@UI.FieldGroup#Main' }
 ];
 
-annotate appBuildCodeSrv.Categories with @UI.SelectionFields: [
+annotate appBuildCodeService.Categories with @UI.SelectionFields: [
   books1_ID
 ];
 
-annotate appBuildCodeSrv.Customers with @UI.HeaderInfo: { TypeName: 'Customer', TypeNamePlural: 'Customers', Title: { Value: customerId } };
-annotate appBuildCodeSrv.Customers with {
+annotate appBuildCodeService.Customers with @UI.HeaderInfo: { TypeName: 'Customer', TypeNamePlural: 'Customers', Title: { Value: customerId } };
+annotate appBuildCodeService.Customers with {
   ID @UI.Hidden @Common.Text: { $value: customerId, ![@UI.TextArrangement]: #TextOnly }
 };
-annotate appBuildCodeSrv.Customers with @UI.Identification: [{ Value: customerId }];
-annotate appBuildCodeSrv.Customers with @UI.DataPoint #firstName: {
+annotate appBuildCodeService.Customers with @UI.Identification: [{ Value: customerId }];
+annotate appBuildCodeService.Customers with @UI.DataPoint #firstName: {
   Value: firstName,
   Title: 'First Name',
 };
-annotate appBuildCodeSrv.Customers with @UI.DataPoint #lastName: {
+annotate appBuildCodeService.Customers with @UI.DataPoint #lastName: {
   Value: lastName,
   Title: 'Last Name',
 };
-annotate appBuildCodeSrv.Customers with {
+annotate appBuildCodeService.Customers with {
   customerId @title: 'Customer ID';
   firstName @title: 'First Name';
   lastName @title: 'Last Name';
@@ -293,7 +293,7 @@ annotate appBuildCodeSrv.Customers with {
   modifiedBy @title: 'Modified By'
 };
 
-annotate appBuildCodeSrv.Customers with @UI.LineItem: [
+annotate appBuildCodeService.Customers with @UI.LineItem: [
  { $Type: 'UI.DataField', Value: customerId },
  { $Type: 'UI.DataField', Value: firstName },
  { $Type: 'UI.DataField', Value: lastName },
@@ -301,7 +301,7 @@ annotate appBuildCodeSrv.Customers with @UI.LineItem: [
  { $Type: 'UI.DataField', Value: phone }
 ];
 
-annotate appBuildCodeSrv.Customers with @UI.FieldGroup #Main: {
+annotate appBuildCodeService.Customers with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
  { $Type: 'UI.DataField', Value: customerId },
  { $Type: 'UI.DataField', Value: firstName },
@@ -315,29 +315,29 @@ annotate appBuildCodeSrv.Customers with @UI.FieldGroup #Main: {
   ]
 };
 
-annotate appBuildCodeSrv.Customers with {
+annotate appBuildCodeService.Customers with {
   orders @Common.Label: 'Orders'
 };
 
-annotate appBuildCodeSrv.Customers with @UI.HeaderFacets: [
+annotate appBuildCodeService.Customers with @UI.HeaderFacets: [
  { $Type : 'UI.ReferenceFacet', Target : '@UI.DataPoint#firstName' },
  { $Type : 'UI.ReferenceFacet', Target : '@UI.DataPoint#lastName' }
 ];
 
-annotate appBuildCodeSrv.Customers with @UI.Facets: [
+annotate appBuildCodeService.Customers with @UI.Facets: [
   { $Type: 'UI.ReferenceFacet', ID: 'Main', Label: 'General Information', Target: '@UI.FieldGroup#Main' }
 ];
 
-annotate appBuildCodeSrv.Customers with @UI.SelectionFields: [
+annotate appBuildCodeService.Customers with @UI.SelectionFields: [
   customerId
 ];
 
-annotate appBuildCodeSrv.Orders with @UI.HeaderInfo: { TypeName: 'Order', TypeNamePlural: 'Orders', Title: { Value: orderId } };
-annotate appBuildCodeSrv.Orders with {
+annotate appBuildCodeService.Orders with @UI.HeaderInfo: { TypeName: 'Order', TypeNamePlural: 'Orders', Title: { Value: orderId } };
+annotate appBuildCodeService.Orders with {
   ID @UI.Hidden @Common.Text: { $value: orderId, ![@UI.TextArrangement]: #TextOnly }
 };
-annotate appBuildCodeSrv.Orders with @UI.Identification: [{ Value: orderId }];
-annotate appBuildCodeSrv.Orders with {
+annotate appBuildCodeService.Orders with @UI.Identification: [{ Value: orderId }];
+annotate appBuildCodeService.Orders with {
   customer @Common.ValueList: {
     CollectionPath: 'Customers',
     Parameters    : [
@@ -385,11 +385,11 @@ annotate appBuildCodeSrv.Orders with {
     ],
   }
 };
-annotate appBuildCodeSrv.Orders with @UI.DataPoint #orderDate: {
+annotate appBuildCodeService.Orders with @UI.DataPoint #orderDate: {
   Value: orderDate,
   Title: 'Order Date',
 };
-annotate appBuildCodeSrv.Orders with {
+annotate appBuildCodeService.Orders with {
   orderId @title: 'Order ID';
   orderDate @title: 'Order Date';
   totalAmount @title: 'Total Amount';
@@ -399,18 +399,18 @@ annotate appBuildCodeSrv.Orders with {
   modifiedBy @title: 'Modified By'
 };
 
-annotate appBuildCodeSrv.Orders with {
+annotate appBuildCodeService.Orders with {
   totalAmount @Measures.ISOCurrency: Currency_code
 };
 
-annotate appBuildCodeSrv.Orders with @UI.LineItem: [
+annotate appBuildCodeService.Orders with @UI.LineItem: [
  { $Type: 'UI.DataField', Value: orderId },
  { $Type: 'UI.DataField', Value: orderDate },
  { $Type: 'UI.DataField', Value: totalAmount },
     { $Type: 'UI.DataField', Label: 'Customer', Value: customer_ID }
 ];
 
-annotate appBuildCodeSrv.Orders with @UI.FieldGroup #Main: {
+annotate appBuildCodeService.Orders with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
  { $Type: 'UI.DataField', Value: orderId },
  { $Type: 'UI.DataField', Value: orderDate },
@@ -423,33 +423,33 @@ annotate appBuildCodeSrv.Orders with @UI.FieldGroup #Main: {
   ]
 };
 
-annotate appBuildCodeSrv.Orders with {
+annotate appBuildCodeService.Orders with {
   customer @Common.Text: { $value: customer.customerId, ![@UI.TextArrangement]: #TextOnly }
 };
 
-annotate appBuildCodeSrv.Orders with {
+annotate appBuildCodeService.Orders with {
   customer @Common.Label: 'Customer';
   books @Common.Label: 'Books'
 };
 
-annotate appBuildCodeSrv.Orders with @UI.HeaderFacets: [
+annotate appBuildCodeService.Orders with @UI.HeaderFacets: [
  { $Type : 'UI.ReferenceFacet', Target : '@UI.DataPoint#orderDate' }
 ];
 
-annotate appBuildCodeSrv.Orders with @UI.Facets: [
+annotate appBuildCodeService.Orders with @UI.Facets: [
   { $Type: 'UI.ReferenceFacet', ID: 'Main', Label: 'General Information', Target: '@UI.FieldGroup#Main' }
 ];
 
-annotate appBuildCodeSrv.Orders with @UI.SelectionFields: [
+annotate appBuildCodeService.Orders with @UI.SelectionFields: [
   customer_ID
 ];
 
-annotate appBuildCodeSrv.Reviews with @UI.HeaderInfo: { TypeName: 'Review', TypeNamePlural: 'Reviews', Title: { Value: reviewId } };
-annotate appBuildCodeSrv.Reviews with {
+annotate appBuildCodeService.Reviews with @UI.HeaderInfo: { TypeName: 'Review', TypeNamePlural: 'Reviews', Title: { Value: reviewId } };
+annotate appBuildCodeService.Reviews with {
   ID @UI.Hidden @Common.Text: { $value: reviewId, ![@UI.TextArrangement]: #TextOnly }
 };
-annotate appBuildCodeSrv.Reviews with @UI.Identification: [{ Value: reviewId }];
-annotate appBuildCodeSrv.Reviews with {
+annotate appBuildCodeService.Reviews with @UI.Identification: [{ Value: reviewId }];
+annotate appBuildCodeService.Reviews with {
   book @Common.ValueList: {
     CollectionPath: 'Books',
     Parameters    : [
@@ -497,7 +497,7 @@ annotate appBuildCodeSrv.Reviews with {
     ],
   }
 };
-annotate appBuildCodeSrv.Reviews with {
+annotate appBuildCodeService.Reviews with {
   customer @Common.ValueList: {
     CollectionPath: 'Customers',
     Parameters    : [
@@ -545,11 +545,11 @@ annotate appBuildCodeSrv.Reviews with {
     ],
   }
 };
-annotate appBuildCodeSrv.Reviews with @UI.DataPoint #rating: {
+annotate appBuildCodeService.Reviews with @UI.DataPoint #rating: {
   Value: rating,
   Title: 'Rating',
 };
-annotate appBuildCodeSrv.Reviews with {
+annotate appBuildCodeService.Reviews with {
   reviewId @title: 'Review ID';
   reviewText @title: 'Review Text';
   rating @title: 'Rating';
@@ -559,7 +559,7 @@ annotate appBuildCodeSrv.Reviews with {
   modifiedBy @title: 'Modified By'
 };
 
-annotate appBuildCodeSrv.Reviews with @UI.LineItem: [
+annotate appBuildCodeService.Reviews with @UI.LineItem: [
  { $Type: 'UI.DataField', Value: reviewId },
  { $Type: 'UI.DataField', Value: reviewText },
  { $Type: 'UI.DataField', Value: rating },
@@ -567,7 +567,7 @@ annotate appBuildCodeSrv.Reviews with @UI.LineItem: [
     { $Type: 'UI.DataField', Label: 'Customer', Value: customer_ID }
 ];
 
-annotate appBuildCodeSrv.Reviews with @UI.FieldGroup #Main: {
+annotate appBuildCodeService.Reviews with @UI.FieldGroup #Main: {
   $Type: 'UI.FieldGroupType', Data: [
  { $Type: 'UI.DataField', Value: reviewId },
  { $Type: 'UI.DataField', Value: reviewText },
@@ -581,25 +581,25 @@ annotate appBuildCodeSrv.Reviews with @UI.FieldGroup #Main: {
   ]
 };
 
-annotate appBuildCodeSrv.Reviews with {
+annotate appBuildCodeService.Reviews with {
   book @Common.Text: { $value: book.isbn, ![@UI.TextArrangement]: #TextOnly };
   customer @Common.Text: { $value: customer.customerId, ![@UI.TextArrangement]: #TextOnly }
 };
 
-annotate appBuildCodeSrv.Reviews with {
+annotate appBuildCodeService.Reviews with {
   book @Common.Label: 'Book';
   customer @Common.Label: 'Customer'
 };
 
-annotate appBuildCodeSrv.Reviews with @UI.HeaderFacets: [
+annotate appBuildCodeService.Reviews with @UI.HeaderFacets: [
  { $Type : 'UI.ReferenceFacet', Target : '@UI.DataPoint#rating' }
 ];
 
-annotate appBuildCodeSrv.Reviews with @UI.Facets: [
+annotate appBuildCodeService.Reviews with @UI.Facets: [
   { $Type: 'UI.ReferenceFacet', ID: 'Main', Label: 'General Information', Target: '@UI.FieldGroup#Main' }
 ];
 
-annotate appBuildCodeSrv.Reviews with @UI.SelectionFields: [
+annotate appBuildCodeService.Reviews with @UI.SelectionFields: [
   book_ID,
   customer_ID
 ];

@@ -27,7 +27,7 @@
                     return Controller.extend("PreviewController", {
                         onInit: function () {
 
-                            const data = {"Services":[{"ServiceName":"appBuildCodeSrv","DetailsURL":"./service/appBuildCode/","Metadata":"./service/appBuildCode/$metadata","Entities":[{"Name":"Books","URL":"./service/appBuildCode/Books","FioriURL":"$fiori-preview/appBuildCodeSrv/Books#preview-app"},{"Name":"Categories","URL":"./service/appBuildCode/Categories","FioriURL":"$fiori-preview/appBuildCodeSrv/Categories#preview-app"},{"Name":"Customers","URL":"./service/appBuildCode/Customers","FioriURL":"$fiori-preview/appBuildCodeSrv/Customers#preview-app"},{"Name":"Orders","URL":"./service/appBuildCode/Orders","FioriURL":"$fiori-preview/appBuildCodeSrv/Orders#preview-app"},{"Name":"Reviews","URL":"./service/appBuildCode/Reviews","FioriURL":"$fiori-preview/appBuildCodeSrv/Reviews#preview-app"}],"EntitiesCount":5}]}
+                            const data = {"Services":[{"ServiceName":"appBuildCodeService","DetailsURL":"./service/appBuildCode/","Metadata":"./service/appBuildCode/$metadata","Entities":[],"EntitiesCount":0}]}
                             this.getView().setModel(new JSONModel(data));
                         }
                     });

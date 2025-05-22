@@ -1,1 +1,1 @@
-using appBuildCodeSrv as service from '../../srv/service';
+using appBuildCodeService as service from '../../srv/service';

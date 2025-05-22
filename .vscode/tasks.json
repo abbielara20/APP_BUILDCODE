@@ -1,5 +1,5 @@
 {
-  "version": "1.38.0",
+  "version": "2.0.0",
   "tasks": [
     {
       "label": "kill-cds-processes",
@@ -64,6 +64,21 @@
       "label": "Enable Discovery and Deploy appBuildCode",
       "taskType": "Deploy",
       "enableDiscovery": "true"
+    },
+    {
+      "label": "dev-project",
+      "type": "process",
+      "command": "npx",
+      "args": [
+        "dev-cap-tools",
+        "gen-entrypoint"
+      ],
+      "dependsOn": [
+        "BuildMDK"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
     }
   ]
 }

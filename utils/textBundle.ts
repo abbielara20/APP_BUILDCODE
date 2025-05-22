@@ -1,4 +1,5 @@
 import { TextBundle } from '@sap/textbundle';
+import path from 'path';
 
 export default class TextBundleClass {
     /**
@@ -6,7 +7,7 @@ export default class TextBundleClass {
      * @param {string} locale - local of the user logged in
      * @returns {object} bundle - details from the locale
      */
-    fnGetTextBundle(locale: string) {
+    fnGetTextBundle(locale: string): any {
         const bundle = new TextBundle("../i18n/i18n", locale);
         return bundle;
     }

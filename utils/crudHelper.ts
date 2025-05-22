@@ -38,7 +38,7 @@ export default class CrudHelperClass {
     orderBy: string[] = []
   ) {
     try {
-      const query = onselect
+      const query = SELECT
         .from(entity)
         .columns(...columns)
         .where(where)

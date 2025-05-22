@@ -1,8 +1,9 @@
 using {appBuildCode as my} from '../db/schema.cds';
 
-@path    : '/service/appBuildCode'
-@requires: 'authenticated-user'
+@path: '/service/appBuildCode'
 service appBuildCodeService {
+  function fnCrud(action : String) returns String;
+  
   @odata.draft.enabled
   entity Books      as projection on my.Books;
 
